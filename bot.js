@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const conv = require('number-to-words')
 
-const prefix = process.env.P
+const prefix = '1'
 
 const client = new Discord.Client({ disableEveryone: true});
 
@@ -26,7 +26,6 @@ client.on('ready', () => {
     console.log(`Developed By: ! Darky ♥`);
     console.log(`Guilds: ${client.guilds.size}`);
     console.log(`Users: ${client.users.size}`);
-    client.user.setActivity(process.env.PL);
 });
 
 client.on('message', async msg => {
