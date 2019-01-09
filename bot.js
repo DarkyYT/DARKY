@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const conv = require('number-to-words')
 
-const prefix = '1';
+const prefix = '1'
 
 const client = new Discord.Client({ disableEveryone: true});
 
@@ -23,9 +23,10 @@ client.on('error', console.error);
 
 client.on('ready', () => {
     console.log(`Created By: MohmaedAlhassny`);
-    console.log(`Developed By: ! Darky ♥`);
+    console.log(`Developed By: ! Abdulrhman ♥`);
     console.log(`Guilds: ${client.guilds.size}`);
     console.log(`Users: ${client.users.size}`);
+    client.user.setActivity('Alhassny Orders.',{type: 'WATCHING'});
 });
 
 client.on('message', async msg => {
@@ -407,14 +408,14 @@ function play(guild, song) {
 
 //admin
 
-const devs = ['336584648518008832','',''];
+const devs = ['449313863494664214','228401267263668224','326131905743421440'];
 
 client.on('message', message => {
     let argresult = message.content.split(` `).slice(1).join(' ');
     if (message.content.startsWith(prefix + 'setStreaming')) {
-      if (!devs.includes(message.author.id)) return message.channel.send("<@336584648518008832> only this guy can do restart the bot so don't try again :wink:.");
+      if (!devs.includes(message.author.id)) return message.channel.send("<@449313863494664214> only this guy can do restart the bot so don't try again :wink:.");
       message.delete();
-      client.user.setGame(argresult, 'https://twitch.tv/Darky');
+      client.user.setGame(argresult, 'https://twitch.tv/DynastyShop');
 
     } else if(message.content.startsWith(prefix + 'setWatching')) {
         client.user.setActivity(argresult,{type: 'WATCHING'});
@@ -443,11 +444,8 @@ client.on('message', message => {
 
 client.on('message', message => {
   var helplist = `**${client.user.tag}** commands:
-
   ` + '`' + prefix + 'about` - **شرح معلومات البوت**' + `
   ` + '`' + prefix + 'ping` - **سرعه البوت**' + `
-
-
   :notes: __**أوامر الموسيقى**__` + `
   ` + '`' + prefix + 'play` - **لتشغيل الموسيقى**' + `
   ` + '`' + prefix + 'skip` - **لتصويت تخطي الأغنية**' + `
@@ -457,9 +455,6 @@ client.on('message', message => {
   ` + '`' + prefix + 'volume` - **لتغيير مستوى الصوت**' + `
   ` + '`' + prefix + 'queue` - **لمشاهدة طابور الموسيقى**' + `
   ` + '`' + prefix + 'repeat` - **لأعادة تشغيل الاغنية كل ما تنتهي مباشرتاً**' + `
-
-
-
   :watch: __**أوامر صاحب البوت**__` + `
   ` + '`' + prefix + 'setStreaming` - **لجعل وضع البوت ستريمنق**' + `
   ` + '`' + prefix + 'setWatching` - **لجعل وضع البوت واتشنق**' + `
@@ -467,12 +462,10 @@ client.on('message', message => {
   ` + '`' + prefix + 'setName` - **لتغيير أسم البوت**' + `
   ` + '`' + prefix + 'setAvatar` - **لتغيير صورة البوت**' + `
   ` + '`' + prefix + 'setStatus` - **لتغيير حالة البوت**' + `
-
-
 ** BetterGroip Shop..**`
   if(message.content === prefix + 'help') {
     message.author.send(helplist);
   }
 });
 
-client.login('process.env.BOT_TOKEN');
+client.login(process.env.BOT_TOKEN);
