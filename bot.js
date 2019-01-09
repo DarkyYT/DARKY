@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const conv = require('number-to-words')
 
-const prefix = '1'
+const prefix = '1';
 
 const client = new Discord.Client({ disableEveryone: true});
 
@@ -475,4 +475,4 @@ client.on('message', message => {
   }
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login('process.env.BOT_TOKEN');
