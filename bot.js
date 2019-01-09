@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const conv = require('number-to-words')
 
-const prefix = '4'
+const prefix = process.env.P
 
 const client = new Discord.Client({ disableEveryone: true});
 
@@ -23,10 +23,10 @@ client.on('error', console.error);
 
 client.on('ready', () => {
     console.log(`Created By: MohmaedAlhassny`);
-    console.log(`Developed By: ! Abdulrhman ♥`);
+    console.log(`Developed By: ! Darky ♥`);
     console.log(`Guilds: ${client.guilds.size}`);
     console.log(`Users: ${client.users.size}`);
-    client.user.setActivity('Alhassny Orders.',{type: 'WATCHING'});
+    client.user.setActivity(process.env.PL);
 });
 
 client.on('message', async msg => {
@@ -408,14 +408,14 @@ function play(guild, song) {
 
 //admin
 
-const devs = ['449313863494664214','228401267263668224','326131905743421440'];
+const devs = ['336584648518008832','',''];
 
 client.on('message', message => {
     let argresult = message.content.split(` `).slice(1).join(' ');
     if (message.content.startsWith(prefix + 'setStreaming')) {
-      if (!devs.includes(message.author.id)) return message.channel.send("<@449313863494664214> only this guy can do restart the bot so don't try again :wink:.");
+      if (!devs.includes(message.author.id)) return message.channel.send("<@336584648518008832> only this guy can do restart the bot so don't try again :wink:.");
       message.delete();
-      client.user.setGame(argresult, 'https://twitch.tv/DynastyShop');
+      client.user.setGame(argresult, 'https://twitch.tv/Darky');
 
     } else if(message.content.startsWith(prefix + 'setWatching')) {
         client.user.setActivity(argresult,{type: 'WATCHING'});
@@ -476,4 +476,4 @@ client.on('message', message => {
   }
 });
 
-client.login('process.env.BOT_TOKEN');
+client.login(process.env.BOT_TOKEN);
