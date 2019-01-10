@@ -17,14 +17,14 @@ const ytdl = require('ytdl-core');
 const fs = require('fs');
 
 const gif = require("gif-search");
- client.on('ready', function(){
 
 const client = new Discord.Client({disableEveryone: true});
- });
 const prefix = process.env.P;
 /////////////////////////
 ////////////////////////
-
+ client.on('ready', function(){
+	 client.user.setActivity(process.env.G)
+ });
 client.on('message', async msg =>{
 	if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
