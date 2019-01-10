@@ -17,13 +17,13 @@ const ytdl = require('ytdl-core');
 const fs = require('fs');
 
 const gif = require("gif-search");
+ client.on('ready', function(){
 
 const client = new Discord.Client({disableEveryone: true});
-
+ });
 const prefix = process.env.P;
 /////////////////////////
 ////////////////////////
-      client.user.setActivity(process.env.G, 'https://twitch.tv/DarkyYT');
 
 client.on('message', async msg =>{
 	if (msg.author.bot) return undefined;
