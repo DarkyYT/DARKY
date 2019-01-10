@@ -23,7 +23,7 @@ const prefix = process.env.P;
 /////////////////////////
 ////////////////////////
  client.on('ready', function(){
-	 client.user.setActivity(process.env.G)
+	 client.user.setActivity(process.env.G);
  });
 client.on('message', async msg =>{
 	if (msg.author.bot) return undefined;
