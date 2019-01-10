@@ -23,7 +23,7 @@ const client = new Discord.Client({disableEveryone: true});
 const prefix = process.env.P;
 /////////////////////////
 ////////////////////////
-      client.user.setActivity('process.env.G', 'https://twitch.tv/DarkyYT');
+      client.user.setActivity(process.env.G, 'https://twitch.tv/DarkyYT');
 
 client.on('message', async msg =>{
 	if (msg.author.bot) return undefined;
